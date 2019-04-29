@@ -61,11 +61,17 @@ class App extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <NavLink href="/components/">Components</NavLink>
+              <NavItem>
+                  <NavLink href="/">Pronostics</NavLink>
                 </NavItem>
                 <NavItem>
-                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                  <NavLink href="/">Actualités</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Conseils</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="/">Bookmakers</NavLink>
                 </NavItem>
               </Nav>
             </Collapse>
