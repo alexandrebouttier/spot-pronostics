@@ -121,7 +121,7 @@ class App extends Component {
                         <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                         <span>Côte : {pronostic.cote}</span><br></br>
                         <span>Mise : {pronostic.mise}</span><br></br>
-                        <span>Gains :{pronostic.gains}</span>
+                        <span>Gains : {pronostic.gains} €</span>
                       </CardBody>
                     </Card>
 
