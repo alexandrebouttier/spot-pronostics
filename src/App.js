@@ -61,8 +61,8 @@ class App extends Component {
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
-              <NavItem>
-                  <NavLink href="/">Pronostics</NavLink>
+                <NavItem>
+                  <NavLink href="#pronostics">Pronostics</NavLink>
                 </NavItem>
                 <NavItem>
                   <NavLink href="/">Actualités</NavLink>
@@ -86,23 +86,40 @@ class App extends Component {
           </Container>
 
         </Jumbotron>
+
         <Container>
+          <Row className="mb-5">
+            <Col lg="4">
+            <h2>À quoi ça sert ?</h2>
+            MultiTipsters vous simplifie votre recherche de pronostics , fini le temps perdu à chercher à droite a gauche sur différents sites</Col>
+            <Col lg="4">
+              <h2>Pronostics</h2>
+              MultiTipsters met à votre disposition des pronostics de paris sportifs de différents sources de sites affluent.</Col>
+            <Col lg="4">
+              <h2>News</h2>Retrouver toutes les actualités football de vos sites favoris</Col>
+
+
+          </Row>
+        </Container>
+        <Container>
+          <h1 id="pronostics">Pronostics</h1>
+          <p>Choisissez votre source de pronostics</p>
           <Nav tabs className="container mb-5 navbar-light bg-light sticky-top">
             <NavItem>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '1' })}
                 onClick={() => { this.toggle('1'); }}
               >
-                <img style={{ height:"2em" }} src="https://psmedia.playstation.com/is/image/psmedia/rmc-sport-two-column-01-fr-04oct18_1538648611166?$Icon$"/>
-            </NavLink>
+                <img style={{ height: "2em" }} src="https://psmedia.playstation.com/is/image/psmedia/rmc-sport-two-column-01-fr-04oct18_1538648611166?$Icon$" />
+              </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
               >
-               <img style={{ height:"2em" }} src="http://www.pronostics.info/img/logo2.svg"/>
-            </NavLink>
+                <img style={{ height: "2em" }} src="http://www.pronostics.info/img/logo2.svg" />
+              </NavLink>
             </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab} className="mt-5">
