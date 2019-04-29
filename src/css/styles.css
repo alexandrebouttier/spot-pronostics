@@ -19,7 +19,7 @@ body{
 .navbar-dark .navbar-brand {
     color: #fff;
     font-family: 'Gugi';
-
+    font-size: 1.5em;
 }
 .jumbotron{
     background-image: url("https://new.bettingexpert.com/hero-bg.d92b627b51e1aa1fc6f2.jpg");
