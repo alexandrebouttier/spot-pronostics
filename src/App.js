@@ -87,7 +87,7 @@ class App extends Component {
 
         </Jumbotron>
         <Container>
-          <Nav tabs className="container mb-5 navbar-light bg-light">
+          <Nav tabs className="container mb-5 navbar-light bg-light sticky-top">
             <NavItem>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '1' })}
