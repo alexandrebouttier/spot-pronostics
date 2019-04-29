@@ -9,7 +9,7 @@ body{
     font-size: 1.25rem;
     font-weight: 600;
 }
-.nav-item.active {
+.nav-item .active {
     background-color: #dc3545;
 }
 .navbar .nav-link {
