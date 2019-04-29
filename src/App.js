@@ -55,7 +55,7 @@ class App extends Component {
       <div>
 
 
-        <Navbar color="dark" dark expand="md">
+        <Navbar className="shadow" color="dark" dark expand="md">
           <Container>
             <NavbarBrand href="/">multitipsters</NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
@@ -90,8 +90,8 @@ class App extends Component {
         <Container>
           <Row className="mb-5">
             <Col lg="4">
-            <h2>À quoi ça sert ?</h2>
-            MultiTipsters vous simplifie votre recherche de pronostics , fini le temps perdu à chercher à droite a gauche sur différents sites</Col>
+              <h2>À quoi ça sert ?</h2>
+              MultiTipsters vous simplifie votre recherche de pronostics , fini le temps perdu à chercher à droite a gauche sur différents sites</Col>
             <Col lg="4">
               <h2>Pronostics</h2>
               MultiTipsters met à votre disposition des pronostics de paris sportifs de différents sources de sites affluent.</Col>
