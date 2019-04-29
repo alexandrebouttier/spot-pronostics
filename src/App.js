@@ -87,7 +87,7 @@ class App extends Component {
                 className={classnames({ active: this.state.activeTab === '1' })}
                 onClick={() => { this.toggle('1'); }}
               >
-                RMC SPORT
+                <img style={{ height:"2em" }} src="https://psmedia.playstation.com/is/image/psmedia/rmc-sport-two-column-01-fr-04oct18_1538648611166?$Icon$"/>
             </NavLink>
             </NavItem>
             <NavItem>
@@ -95,7 +95,7 @@ class App extends Component {
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
               >
-                Pronostics Info
+               <img style={{ height:"2em" }} src="http://www.pronostics.info/img/logo2.svg"/>
             </NavLink>
             </NavItem>
           </Nav>
