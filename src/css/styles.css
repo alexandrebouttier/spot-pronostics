@@ -1,0 +1,21 @@
+.bg-dark {
+    background-color: #252f3d !important;
+}
+body{
+    background-color: #F3F4F4;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+    font-family: 'Gugi';
+}
+.jumbotron{
+    background-image: url("https://new.bettingexpert.com/hero-bg.d92b627b51e1aa1fc6f2.jpg");
+    color: #fff;
+    border-radius: 0px;
+    padding-top: 5em;
+    padding-bottom: 6em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0% 50% !important;
+}

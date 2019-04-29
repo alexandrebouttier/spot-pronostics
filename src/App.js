@@ -2,14 +2,19 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import {
-  Card, TabContent, TabPane, Nav, Button, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
-  CardTitle
+  Collapse, Navbar, NavbarToggler, NavbarBrand, Card, TabContent, TabPane, Nav, Button, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
+  CardTitle, Jumbotron
 } from 'reactstrap';
 import ReactLoading from "react-loading";
 import classnames from 'classnames';
+import "./css/styles.css";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.state = {
+      collapsed: true
+    };
     this.toggle = this.toggle.bind(this);
     this.state = {
       activeTab: '1'
@@ -40,17 +45,49 @@ class App extends Component {
       });
     }
   }
+  toggleNavbar() {
+    this.setState({
+      collapsed: !this.state.collapsed
+    });
+  }
   render() {
     return (
       <div>
+
+
+        <Navbar color="dark" dark expand="md">
+          <Container>
+            <NavbarBrand href="/">multitipsters</NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="/components/">Components</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Container>
+        </Navbar>
+
+        <Jumbotron>
+          <Container>
+            <h1 className="display-3">MultiTipsters</h1>
+            <p className="lead">Retrouvez plusieurs pronostics de différentes sources en 1 seul site.</p>
+            <hr className="my-2" />
+          </Container>
+
+        </Jumbotron>
         <Container>
-          <Nav  tabs className="fixed-top container mb-5 navbar-light bg-light">
+          <Nav tabs className="container mb-5 navbar-light bg-light">
             <NavItem>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '1' })}
                 onClick={() => { this.toggle('1'); }}
               >
-               RMC SPORT
+                RMC SPORT
             </NavLink>
             </NavItem>
             <NavItem>
@@ -72,7 +109,7 @@ class App extends Component {
                   </div>
                 ) : (this.state.pronostics.map((pronostic, index) => (
                   <Col lg="8" key={index} >
-                    <Card className="mb-4">
+                    <Card className="mb-4 shadow">
                       <CardBody>
                         <CardTitle><b>{pronostic.title}</b></CardTitle>
                         <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
