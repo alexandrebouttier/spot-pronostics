@@ -3,11 +3,23 @@
 }
 body{
     background-color: #F3F4F4;
+    font-family: 'Roboto';
+}
+.lead {
+    font-size: 1.25rem;
+    font-weight: 600;
 }
 
+.navbar .nav-link {
+    color: white!important;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+
+}
 .navbar-dark .navbar-brand {
     color: #fff;
     font-family: 'Gugi';
+
 }
 .jumbotron{
     background-image: url("https://new.bettingexpert.com/hero-bg.d92b627b51e1aa1fc6f2.jpg");
@@ -21,4 +33,22 @@ body{
 }
 .jumbotron h1{
     font-family: 'Gugi';
+    font-size: 4.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+@media screen and (max-width: 960px) {
+    
+    .jumbotron{
+        text-align: center;
+        background-position: 20% 50% !important;
+    }
+    .jumbotron h1 {
+        font-size: 2.5rem;
+    }
+    .lead {
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
 }
