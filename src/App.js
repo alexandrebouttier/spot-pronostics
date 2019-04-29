@@ -74,7 +74,7 @@ class App extends Component {
 
         <Jumbotron>
           <Container>
-            <h1 className="display-3">MultiTipsters</h1>
+            <h1 className="display-3">multiTipsters</h1>
             <p className="lead">Retrouvez plusieurs pronostics de différentes sources en 1 seul site.</p>
             <hr className="my-2" />
           </Container>

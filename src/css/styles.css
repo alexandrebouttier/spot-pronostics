@@ -17,5 +17,8 @@ body{
     padding-bottom: 6em;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 0% 50% !important;
+    background-position: 0% 60% !important;
+}
+.jumbotron h1{
+    font-family: 'Gugi';
 }
