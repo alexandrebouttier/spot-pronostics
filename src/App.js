@@ -22,6 +22,7 @@ class App extends Component {
     this.state = {
       pronostics: [],
       p: [],
+      q: [],
       loading: true
     };
   }
@@ -43,6 +44,17 @@ class App extends Component {
       .then((response) => {
         this.setState({
           p: response.data.pronostics,
+          loading: false
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    axios.get('https://apipronos.herokuapp.com/api/media_pronos')
+      .then((response) => {
+        this.setState({
+          q: response.data.pronostics,
           loading: false
         });
 
@@ -134,6 +146,14 @@ class App extends Component {
                 <img style={{ height: "2em" }} src="http://www.pronostics.info/img/logo2.svg" />
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '3' })}
+                onClick={() => { this.toggle('3'); }}
+              >
+                <img style={{ height: "2em" }} src="https://www.mediapronos.com/wp-content/uploads/2019/03/logo2-1.png" />
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab} className="mt-5">
             <TabPane tabId="1">
@@ -177,6 +197,29 @@ class App extends Component {
                         <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
                         <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                         <span>Auteur: {pronostic.author}</span><br></br>
+                      </CardBody>
+                    </Card>
+
+                  </Col>
+                ))
+                  )}
+
+
+              </Row>
+            </TabPane>
+            <TabPane tabId="3">
+              <Row>
+
+                {this.state.loading ? (
+                  <div className="mx-auto ">
+                    <ReactLoading className="mt-5" type="spin" color="#EC4C40" height={60} width={60} />
+                  </div>
+                ) : (this.state.q.map((pronostic, index) => (
+                  <Col lg="8" key={index} >
+                    <Card className="mb-4 shadow">
+                      <CardBody>
+                        <CardTitle><b>{pronostic.title}</b></CardTitle>
+                        <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                       </CardBody>
                     </Card>
 
