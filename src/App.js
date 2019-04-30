@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import {
-  Collapse, Navbar, NavbarToggler, NavbarBrand, Card, TabContent, TabPane, Nav, Button, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
+  Collapse, Navbar, NavbarToggler, NavbarBrand, Card, TabContent, TabPane, Nav, Button, CardSubtitle, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
   CardTitle, Jumbotron
 } from 'reactstrap';
 import ReactLoading from "react-loading";
@@ -21,6 +21,7 @@ class App extends Component {
     };
     this.state = {
       pronostics: [],
+      p: [],
       loading: true
     };
   }
@@ -30,6 +31,18 @@ class App extends Component {
       .then((response) => {
         this.setState({
           pronostics: response.data.pronostics,
+          loading: false
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+    axios.get('https://apipronos.herokuapp.com/api/pronostics_info')
+      .then((response) => {
+        this.setState({
+          p: response.data.pronostics,
           loading: false
         });
 
@@ -151,20 +164,27 @@ class App extends Component {
             </TabPane>
             <TabPane tabId="2">
               <Row>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
-                  </Card>
-                </Col>
-                <Col sm="6">
-                  <Card body>
-                    <CardTitle>Special Title Treatment</CardTitle>
-                    <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-                    <Button>Go somewhere</Button>
-                  </Card>
-                </Col>
+
+                {this.state.loading ? (
+                  <div className="mx-auto ">
+                    <ReactLoading className="mt-5" type="spin" color="#EC4C40" height={60} width={60} />
+                  </div>
+                ) : (this.state.p.map((pronostic, index) => (
+                  <Col lg="8" key={index} >
+                    <h3>{pronostic.title}</h3>
+                    <Card className="mb-4 shadow">
+                      <CardBody>
+                        <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
+                        <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                        <span>Auteur: {pronostic.author}</span><br></br>
+                      </CardBody>
+                    </Card>
+
+                  </Col>
+                ))
+                  )}
+
+
               </Row>
             </TabPane>
           </TabContent>
