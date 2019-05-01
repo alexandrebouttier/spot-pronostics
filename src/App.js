@@ -160,7 +160,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '1' })}
                     onClick={() => { this.toggle('1'); }}
                   >
-                   RMC SPORT
+                   <b>RMC SPORT</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -168,7 +168,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '2' })}
                     onClick={() => { this.toggle('2'); }}
                   >
-                   Pronostics Info
+                  <b>Pronostics Info</b> 
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -176,7 +176,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '3' })}
                     onClick={() => { this.toggle('3'); }}
                   >
-                    MediaPronos
+                   <b>MediaPronos</b> 
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -184,7 +184,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '4' })}
                     onClick={() => { this.toggle('4'); }}
                   >
-                 Rue des joueurs
+                 <b>Rue des joueurs</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -192,7 +192,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '5' })}
                     onClick={() => { this.toggle('5'); }}
                   >
-                   Sporty-trader
+                   <b>Sporty-trader</b>
                   </NavLink>
                 </NavItem>
               </Nav>
