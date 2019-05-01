@@ -23,6 +23,8 @@ class App extends Component {
       pronostics: [],
       p: [],
       q: [],
+      t:[],
+      u:[],
       loading: true
     };
   }
@@ -62,6 +64,28 @@ class App extends Component {
       .catch(function (error) {
         console.log(error);
       });
+      axios.get('https://apipronos.herokuapp.com/api/sporty_trader')
+      .then((response) => {
+        this.setState({
+          t: response.data.pronostics,
+          loading: false
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
+      axios.get('https://apipronos.herokuapp.com/api/rue_des_joueurs')
+      .then((response) => {
+        this.setState({
+          u: response.data.pronostics,
+          loading: false
+        });
+
+      })
+      .catch(function (error) {
+        console.log(error);
+      }); 
   }
   toggle(tab) {
     if (this.state.activeTab !== tab) {
@@ -154,12 +178,20 @@ class App extends Component {
                 <img style={{ height: "2em" }} src="https://www.mediapronos.com/wp-content/uploads/2019/03/logo2-1.png" />
               </NavLink>
             </NavItem>
-            <NavItem>
+            <NavItem style={{ backgroundColor:"#394547"}}>
               <NavLink
                 className={classnames({ active: this.state.activeTab === '4' })}
                 onClick={() => { this.toggle('4'); }}
               >
                 <img style={{ height: "2em" }} src="https://www.ruedesjoueurs.com/templates/rdjv3/styles/rdj/images/logo-rdj-white.png" />
+              </NavLink>
+            </NavItem>
+            <NavItem style={{ backgroundColor:"#0F0F0F"}}>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '5' })}
+                onClick={() => { this.toggle('5'); }}
+              >
+                <img style={{ height: "2em" }} src="https://www.sportytrader.com/dist/img/logo__sporty.png" />
               </NavLink>
             </NavItem>
           </Nav>
@@ -199,7 +231,7 @@ class App extends Component {
                   </div>
                 ) : (this.state.p.map((pronostic, index) => (
                   <Col lg="8" key={index} >
-                    <h3>{pronostic.title}</h3>
+                    <h4>{pronostic.title}</h4>
                     <Card className="mb-4 shadow">
                       <CardBody>
                         <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
@@ -245,12 +277,38 @@ class App extends Component {
                   <div className="mx-auto ">
                     <ReactLoading className="mt-5" type="spin" color="#EC4C40" height={60} width={60} />
                   </div>
-                ) : (this.state.q.map((pronostic, index) => (
+                ) : (this.state.u.map((pronostic, index) => (
                   <Col lg="8" key={index} >
                     <Card className="mb-4 shadow">
                       <CardBody>
-                        <CardTitle><b>{pronostic.title}</b></CardTitle>
+                        <CardTitle><b>{pronostic.equipe1}</b></CardTitle>
                         <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                      </CardBody>
+                    </Card>
+
+                  </Col>
+                ))
+                  )}
+
+
+              </Row>
+            </TabPane>
+            <TabPane tabId="5">
+              <Row>
+
+                {this.state.loading ? (
+                  <div className="mx-auto ">
+                    <ReactLoading className="mt-5" type="spin" color="#EC4C40" height={60} width={60} />
+                  </div>
+                ) : (this.state.t.map((pronostic, index) => (
+                  <Col lg="8" key={index} >
+                    <Card className="mb-4 shadow">
+                      <CardBody>
+                        <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}</b></CardTitle>
+                        <CardText>Date: {pronostic.date} {pronostic.time}</CardText>
+                        <CardText>Compétition: {pronostic.competition}</CardText>
+                        <CardText>Pronostic: {pronostic.selection}</CardText>
+                     
                       </CardBody>
                     </Card>
 
