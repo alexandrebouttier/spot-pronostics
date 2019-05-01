@@ -212,7 +212,7 @@ class App extends Component {
                             <CardTitle><b>{pronostic.title}</b></CardTitle>
                             <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                             <span>Côte : {pronostic.cote}</span><br></br>
-                            <span>Mise : {pronostic.mise}</span><br></br>
+                            <span>Mise : {pronostic.mise} €</span><br></br>
                             <span>Gains : {pronostic.gains} €</span>
                             <div className="text-center">
                               <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
