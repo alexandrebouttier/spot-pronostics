@@ -341,8 +341,8 @@ class App extends Component {
             </Col>
 
 
-            <Col md="4">
-            <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" className="img-fluid" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
+            <Col md="4" >
+            <a  href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" className="img-fluid sticky-top" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
             </Col>
           </Row>
         </Container>
