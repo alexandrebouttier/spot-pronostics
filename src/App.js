@@ -16,16 +16,15 @@ class App extends Component {
       collapsed: true
     };
     this.toggle = this.toggle.bind(this);
-    this.state = {
-      activeTab: '1'
-    };
+  
     this.state = {
       pronostics: [],
       p: [],
       q: [],
       t: [],
       u: [],
-      loading: true
+      loading: true,
+      activeTab: '1'
     };
   }
 
