@@ -154,6 +154,14 @@ class App extends Component {
                 <img style={{ height: "2em" }} src="https://www.mediapronos.com/wp-content/uploads/2019/03/logo2-1.png" />
               </NavLink>
             </NavItem>
+            <NavItem>
+              <NavLink
+                className={classnames({ active: this.state.activeTab === '4' })}
+                onClick={() => { this.toggle('4'); }}
+              >
+                <img style={{ height: "2em" }} src="https://www.ruedesjoueurs.com/templates/rdjv3/styles/rdj/images/logo-rdj-white.png" />
+              </NavLink>
+            </NavItem>
           </Nav>
           <TabContent activeTab={this.state.activeTab} className="mt-5">
             <TabPane tabId="1">
@@ -208,6 +216,29 @@ class App extends Component {
               </Row>
             </TabPane>
             <TabPane tabId="3">
+              <Row>
+
+                {this.state.loading ? (
+                  <div className="mx-auto ">
+                    <ReactLoading className="mt-5" type="spin" color="#EC4C40" height={60} width={60} />
+                  </div>
+                ) : (this.state.q.map((pronostic, index) => (
+                  <Col lg="8" key={index} >
+                    <Card className="mb-4 shadow">
+                      <CardBody>
+                        <CardTitle><b>{pronostic.title}</b></CardTitle>
+                        <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                      </CardBody>
+                    </Card>
+
+                  </Col>
+                ))
+                  )}
+
+
+              </Row>
+            </TabPane>
+            <TabPane tabId="4">
               <Row>
 
                 {this.state.loading ? (
