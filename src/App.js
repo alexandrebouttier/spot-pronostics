@@ -161,7 +161,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '1' })}
                     onClick={() => { this.toggle('1'); }}
                   >
-                    <img style={{ height: "2em" }} src="https://psmedia.playstation.com/is/image/psmedia/rmc-sport-two-column-01-fr-04oct18_1538648611166?$Icon$" />
+                   RMC SPORT
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -169,7 +169,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '2' })}
                     onClick={() => { this.toggle('2'); }}
                   >
-                    <img style={{ height: "2em" }} src="http://www.pronostics.info/img/logo2.svg" />
+                   Pronostics Info
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -177,23 +177,23 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '3' })}
                     onClick={() => { this.toggle('3'); }}
                   >
-                    <img style={{ height: "2em" }} src="https://www.mediapronos.com/wp-content/uploads/2019/03/logo2-1.png" />
+                    MediaPronos
                   </NavLink>
                 </NavItem>
-                <NavItem style={{ backgroundColor: "#394547" }}>
+                <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeTab === '4' })}
                     onClick={() => { this.toggle('4'); }}
                   >
-                    <img style={{ height: "2em" }} src="https://www.ruedesjoueurs.com/templates/rdjv3/styles/rdj/images/logo-rdj-white.png" />
+                 Rue des joueurs
                   </NavLink>
                 </NavItem>
-                <NavItem style={{ backgroundColor: "#0F0F0F" }}>
+                <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeTab === '5' })}
                     onClick={() => { this.toggle('5'); }}
                   >
-                    <img style={{ height: "2em" }} src="https://www.sportytrader.com/dist/img/logo__sporty.png" />
+                   Sporty-trader
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -215,7 +215,7 @@ class App extends Component {
                             <span>Mise : {pronostic.mise} €</span><br></br>
                             <span>Gains : {pronostic.gains} €</span>
                             <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
                           </CardBody>
 
@@ -245,7 +245,7 @@ class App extends Component {
                             <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                             <span>Auteur: {pronostic.author}</span><br></br>
                             <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
                           </CardBody>
                         </Card>
@@ -271,7 +271,7 @@ class App extends Component {
                             <CardTitle><b>{pronostic.title}</b></CardTitle>
                             <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                             <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
                           </CardBody>
                         </Card>
@@ -297,7 +297,7 @@ class App extends Component {
                             <CardTitle><b>{pronostic.equipe1}</b></CardTitle>
                             <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
                             <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
                           </CardBody>
                         </Card>
@@ -325,7 +325,7 @@ class App extends Component {
                             <CardText>Compétition: {pronostic.competition}</CardText>
                             <CardText>Pronostic: {pronostic.selection}</CardText>
                             <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
                           </CardBody>
                         </Card>
@@ -343,7 +343,7 @@ class App extends Component {
 
 
             <Col md="4">
-            <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
+            <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" className="img-fluid" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
             </Col>
           </Row>
         </Container>
