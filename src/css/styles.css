@@ -1,7 +1,9 @@
 .bg-dark {
     background-color: #252f3d !important;
 }
-
+.bg-light {
+    background-color: #ffffff !important;
+}
 body{
     background-color: #F3F4F4;
     font-family: "Poppins"!important;
@@ -38,6 +40,7 @@ button.btn.btn-red:hover {
     font-size: 1.25rem;
     font-weight: 600;
 }
+
 .nav-item .active {
     background-color: #dc3545;
 }
