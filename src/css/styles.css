@@ -1,12 +1,19 @@
 .bg-dark {
     background-color: #252f3d !important;
 }
-#213052
+
 body{
     background-color: #F3F4F4;
-    font-family: "Poppins";
+    font-family: "Poppins"!important;
 }
-
+button.btn.btn-red {
+    background-color: #dc3545;
+    color: white;
+}
+button.btn.btn-red:hover {
+    background-color: #fe5c62;
+    color: white;
+}
 .badge-img-title {
     background-color: #dc3545;
     color: white;
@@ -48,7 +55,7 @@ body{
 
 .nav-tabs .nav-link:hover {
     color: white!important;
-  background-color: #dc3545;
+  background-color: #fe5c62;
   
 }
 

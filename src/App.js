@@ -211,7 +211,7 @@ class App extends Component {
                             <Col md="5" className="pt-4">
                               <div className="pl-3 ">
                                 <Badge color="img-title">{pronostic.imageTitle}</Badge>
-                                <img className="img-fluid shadow" src={pronostic.image} />
+                                <img className="img-fluid" src={pronostic.image} />
                               </div>
                             </Col>
                             <Col md="7"><CardBody>
@@ -348,7 +348,8 @@ class App extends Component {
                               <CardText>Date: {pronostic.date} {pronostic.time}</CardText>
                               <CardText>Compétition: {pronostic.competition}</CardText>
                               <CardText>Pronostic: {pronostic.selection}</CardText>
-                              <div className="text-center">
+                              <Button color="red">Voir l'analyse</Button>
+                              <div className="text-center mt-3">
                                 <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                               </div>
                             </CardBody></Col>
