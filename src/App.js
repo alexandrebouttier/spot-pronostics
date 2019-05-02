@@ -216,10 +216,10 @@ class App extends Component {
                             </Col>
                             <Col md="7"><CardBody>
                               <CardTitle><b>{pronostic.title}</b></CardTitle>
-                              <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
-                              <span>Côte : {pronostic.cote}</span><br></br>
-                              <span>Mise : {pronostic.mise} €</span><br></br>
-                              <span>Gains : {pronostic.gains} €</span>
+                              <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
+                              <span><b>Côte : {pronostic.cote}</b></span><br></br>
+                              <span><b>Mise : {pronostic.mise} €</b></span><br></br>
+                              <span><b>Gains : {pronostic.gains} €</b></span>
                               <div className="text-center mt-3">
                                 <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                               </div>
@@ -286,7 +286,7 @@ class App extends Component {
                         <Card className="mb-4 shadow">
                           <CardBody>
                             <CardTitle><b>{pronostic.title}</b></CardTitle>
-                            <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                            <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
                             <div className="text-center">
                               <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
@@ -312,7 +312,7 @@ class App extends Component {
                         <Card className="mb-4 shadow">
                           <CardBody>
                             <CardTitle><b>{pronostic.equipe1}</b></CardTitle>
-                            <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                            <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
                             <div className="text-center">
                               <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                             </div>
@@ -346,10 +346,10 @@ class App extends Component {
                             </Col>
                             <Col md="7"> <CardBody>
                               <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}</b></CardTitle>
-                              <CardText>Date: {pronostic.date} {pronostic.time}</CardText>
-                              <CardText>Compétition: {pronostic.competition}</CardText>
-                              <CardText>Pronostic: {pronostic.selection}</CardText>
-                              <Button color="red">Voir l'analyse</Button>
+                              <CardText><b>Date: </b>{pronostic.date} {pronostic.time}</CardText>
+                              <CardText><b>Compétition:</b> {pronostic.competition}</CardText>
+                              <CardText><b>Pronostic:</b> {pronostic.selection}</CardText>
+                              <Button color="red"><b>Voir l'analyse</b></Button>
                               <div className="text-center mt-3">
                                 <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                               </div>
