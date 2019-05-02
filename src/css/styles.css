@@ -6,6 +6,25 @@ body{
     background-color: #F3F4F4;
     font-family: 'Roboto';
 }
+
+.badge-img-title {
+    background-color: #dc3545;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 0.9em;
+    padding: 1.4em;
+    border-radius: 0rem;
+}
+.v-center {
+    display: flex;
+    align-items: center;
+}
+.card-title,.card-subtitle {
+    margin-bottom: 0.75rem;
+    color: #dc3545;
+    font-size: 1.4em;
+}
 .lead {
     font-size: 1.25rem;
     font-weight: 600;

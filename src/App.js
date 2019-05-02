@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import {
-  Collapse, Navbar, NavbarToggler, NavbarBrand, Card, TabContent, TabPane, Nav, Button, CardSubtitle, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
+  Collapse, Navbar, Badge, NavbarToggler, NavbarBrand, Card, TabContent, TabPane, Nav, Button, CardSubtitle, NavItem, NavLink, Row, Col, Container, CardText, CardBody,
   CardTitle, Jumbotron
 } from 'reactstrap';
 import ReactLoading from "react-loading";
@@ -16,7 +16,7 @@ class App extends Component {
       collapsed: true
     };
     this.toggle = this.toggle.bind(this);
-  
+
     this.state = {
       pronostics: [],
       p: [],
@@ -153,14 +153,14 @@ class App extends Component {
           <h1 id="pronostics">Pronostics</h1>
           <p>Choisissez votre source de pronostics</p>
           <Row>
-            <Col md="7">
+            <Col md="8">
               <Nav tabs className="container mb-5 navbar-light bg-light sticky-top">
                 <NavItem>
                   <NavLink
                     className={classnames({ active: this.state.activeTab === '1' })}
                     onClick={() => { this.toggle('1'); }}
                   >
-                   <b>RMC SPORT</b>
+                    <b>RMC SPORT</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -168,7 +168,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '2' })}
                     onClick={() => { this.toggle('2'); }}
                   >
-                  <b>Pronostics Info</b> 
+                    <b>Pronostics Info</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -176,7 +176,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '3' })}
                     onClick={() => { this.toggle('3'); }}
                   >
-                   <b>MediaPronos</b> 
+                    <b>MediaPronos</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -184,7 +184,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '4' })}
                     onClick={() => { this.toggle('4'); }}
                   >
-                 <b>Rue des joueurs</b>
+                    <b>Rue des joueurs</b>
                   </NavLink>
                 </NavItem>
                 <NavItem>
@@ -192,7 +192,7 @@ class App extends Component {
                     className={classnames({ active: this.state.activeTab === '5' })}
                     onClick={() => { this.toggle('5'); }}
                   >
-                   <b>Sporty-trader</b>
+                    <b>Sporty-trader</b>
                   </NavLink>
                 </NavItem>
               </Nav>
@@ -207,16 +207,25 @@ class App extends Component {
                     ) : (this.state.pronostics.map((pronostic, index) => (
                       <Col lg="12" key={index} >
                         <Card className="mb-4 shadow">
-                          <CardBody>
-                            <CardTitle><b>{pronostic.title}</b></CardTitle>
-                            <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
-                            <span>Côte : {pronostic.cote}</span><br></br>
-                            <span>Mise : {pronostic.mise} €</span><br></br>
-                            <span>Gains : {pronostic.gains} €</span>
-                            <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
-                            </div>
-                          </CardBody>
+                          <Row>
+                            <Col md="5" className="pt-4">
+                              <div className="pl-3 ">
+                                <Badge color="img-title">{pronostic.imageTitle}</Badge>
+                                <img className="img-fluid shadow" src={pronostic.image} />
+                              </div>
+                            </Col>
+                            <Col md="7"><CardBody>
+                              <CardTitle><b>{pronostic.title}</b></CardTitle>
+                              <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                              <span>Côte : {pronostic.cote}</span><br></br>
+                              <span>Mise : {pronostic.mise} €</span><br></br>
+                              <span>Gains : {pronostic.gains} €</span>
+                              <div className="text-center mt-3">
+                                <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              </div>
+                            </CardBody></Col>
+                          </Row>
+
 
 
                         </Card>
@@ -239,14 +248,22 @@ class App extends Component {
                       <Col lg="12" key={index} >
                         <h4>{pronostic.title}</h4>
                         <Card className="mb-4 shadow">
-                          <CardBody>
-                            <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
-                            <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
-                            <span>Auteur: {pronostic.author}</span><br></br>
-                            <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
-                            </div>
-                          </CardBody>
+
+                          <Row>
+                            <Col className="mx-auto mt-4" md="2"><img src={"http://www.pronostics.info" + pronostic.image} /></Col>
+                            <Col md="9">
+                              <CardBody>
+                                <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
+                                <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+
+                                <span>Auteur: {pronostic.author}</span><br></br>
+                                <div className="text-center mt-3">
+                                  <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                                </div>
+                              </CardBody>
+                            </Col>
+                          </Row>
+
                         </Card>
 
                       </Col>
@@ -318,15 +335,25 @@ class App extends Component {
                     ) : (this.state.t.map((pronostic, index) => (
                       <Col lg="12" key={index} >
                         <Card className="mb-4 shadow">
-                          <CardBody>
-                            <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}</b></CardTitle>
-                            <CardText>Date: {pronostic.date} {pronostic.time}</CardText>
-                            <CardText>Compétition: {pronostic.competition}</CardText>
-                            <CardText>Pronostic: {pronostic.selection}</CardText>
-                            <div className="text-center">
-                              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                          <Row>
+                            <Col md="5" className="v-center"> 
+                            <div className="mx-auto">
+                            <img  style={{height: "7em"}} className="img-fluid mr-2" src={pronostic.equipe1_img} />
+                            <img style={{height: "7em"}} className="img-fluid" src={pronostic.equipe2_img} />
                             </div>
-                          </CardBody>
+                            
+                            </Col>
+                            <Col md="7"> <CardBody>
+                              <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}</b></CardTitle>
+                              <CardText>Date: {pronostic.date} {pronostic.time}</CardText>
+                              <CardText>Compétition: {pronostic.competition}</CardText>
+                              <CardText>Pronostic: {pronostic.selection}</CardText>
+                              <div className="text-center">
+                                <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
+                              </div>
+                            </CardBody></Col>
+                          </Row>
+
                         </Card>
 
                       </Col>
@@ -341,8 +368,8 @@ class App extends Component {
             </Col>
 
 
-            <Col md="4" >
-            <a  href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" className="img-fluid sticky-top" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
+            <Col md="3" >
+              <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3060"><img alt="" className="img-fluid sticky-top" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3060" /></a>
             </Col>
           </Row>
         </Container>
