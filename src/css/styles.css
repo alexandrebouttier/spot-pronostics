@@ -12,6 +12,13 @@ button.btn.btn-red {
     background-color: #dc3545;
     color: white;
 }
+h4 {
+   
+    color: #000000;
+    font-size: 1.3em;
+    font-family: "Poppins";
+    font-weight: 600;
+}
 button.btn.btn-red:hover {
     background-color: #fe5c62;
     color: white;
