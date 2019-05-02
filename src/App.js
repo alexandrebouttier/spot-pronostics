@@ -250,13 +250,14 @@ class App extends Component {
                         <Card className="mb-4 shadow">
 
                           <Row>
-                            <Col className="mx-auto mt-4" md="2"><img src={"http://www.pronostics.info" + pronostic.image} /></Col>
-                            <Col md="9">
+                            <Col className="mx-auto mt-4 text-center" md="3"><img src={"http://www.pronostics.info" + pronostic.image} />
+                              <p className="mt-3">{pronostic.author}</p>
+                              </Col>
+                            <Col md="8">
                               <CardBody>
                                 <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
-                                <CardText>Analyse:<br></br><br></br>{pronostic.pronostic}</CardText>
+                                <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
 
-                                <span>Auteur: {pronostic.author}</span><br></br>
                                 <div className="text-center mt-3">
                                   <a href="https://media.unibet.fr/redirect.aspx?pid=131018&bid=3059"><img className="img-fluid" alt="" src="https://media.unibet.fr/renderimage.aspx?pid=131018&bid=3059" /></a>
                                 </div>
