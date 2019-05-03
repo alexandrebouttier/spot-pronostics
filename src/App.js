@@ -101,7 +101,7 @@ class App extends Component {
   }
   restartAPI() {
 
-    axios.get('https://apipronos.herokuapp.com')
+    axios.get('https://apipronos.herokuapp.com/restart')
       .then((response) => {
         console.log("api redemarer")
       })
