@@ -49,7 +49,10 @@ class RmcTab extends Component {
                                     </Col>
                                     <Col md="7"><CardBody>
                                         <CardTitle><b>{pronostic.title}</b></CardTitle>
-                                        <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
+                                        {pronostic.pronostic.length !== 1 ? (
+                                            <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
+                                        ) : ""}
+
                                         <span><b>Côte : {pronostic.cote}</b></span><br></br>
                                         <span><b>Mise : {pronostic.mise} €</b></span><br></br>
                                         <span><b>Gains : {pronostic.gains} €</b></span>
