@@ -29,6 +29,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.restartHEROKU();
     axios.get('https://apipronos.herokuapp.com/api/rmc')
       .then((response) => {
         this.setState({
@@ -98,7 +99,23 @@ class App extends Component {
       collapsed: !this.state.collapsed
     });
   }
+  restartAPI() {
+
+    axios.get('https://apipronos.herokuapp.com')
+      .then((response) => {
+        console.log("api redemarer")
+      })
+  }
+  restartHEROKU() {
+    setInterval(this.restartAPI, 1500000);
+  };
+
+
+
+
   render() {
+
+
     return (
       <div>
 
@@ -252,7 +269,7 @@ class App extends Component {
                           <Row>
                             <Col className="mx-auto mt-4 text-center" md="3"><img src={"http://www.pronostics.info" + pronostic.image} />
                               <p className="mt-3">{pronostic.author}</p>
-                              </Col>
+                            </Col>
                             <Col md="8">
                               <CardBody>
                                 <CardSubtitle><b>{pronostic.subtitle}</b></CardSubtitle>
@@ -337,12 +354,12 @@ class App extends Component {
                       <Col lg="12" key={index} >
                         <Card className="mb-4 shadow">
                           <Row>
-                            <Col md="5" className="v-center"> 
-                            <div className="mx-auto">
-                            <img  style={{height: "7em"}} className="img-fluid mr-2" src={pronostic.equipe1_img} />
-                            <img style={{height: "7em"}} className="img-fluid" src={pronostic.equipe2_img} />
-                            </div>
-                            
+                            <Col md="5" className="v-center">
+                              <div className="mx-auto">
+                                <img style={{ height: "7em" }} className="img-fluid mr-2" src={pronostic.equipe1_img} />
+                                <img style={{ height: "7em" }} className="img-fluid" src={pronostic.equipe2_img} />
+                              </div>
+
                             </Col>
                             <Col md="7"> <CardBody>
                               <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}</b></CardTitle>
