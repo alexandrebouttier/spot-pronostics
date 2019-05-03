@@ -19,20 +19,7 @@ class PageNews extends Component {
         };
     }
 
-    componentDidMount() {
-
-        axios.get(API + "so_foot")
-            .then((response) => {
-                this.setState({
-                    articles: response.data.articles,
-                    loading: false
-                });
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+   
 
     render() {
         return (
