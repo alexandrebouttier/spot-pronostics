@@ -12,6 +12,11 @@ button.btn.btn-red {
     background-color: #dc3545;
     color: white;
 }
+.badge {
+  
+    white-space: normal !important;
+  
+}
 h4 {
    
     color: #000000;
