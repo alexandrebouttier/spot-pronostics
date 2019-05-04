@@ -8,31 +8,20 @@ class SportyTraderAnalyse extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            pronostic: [],
             loading: true,
+            pronostic: []
         };
     }
 
     componentDidMount() {
-
-        axios.get(API + "sporty_trader")
-            .then((response) => {
-                this.setState({
-                    pronostics: response.data.pronostics,
-                    loading: false
-                });
-
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        const { id } = this.props.match.params;
+        console.log(id);
     }
-
     render() {
         return (
             <div>
 
-                
+                <h1>dsds</h1>
             </div>
         );
     }

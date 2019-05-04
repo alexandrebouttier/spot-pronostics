@@ -22,7 +22,7 @@ const Root = () => (
         <Route exact path="/news" component={PageNews} />
         <Route exact path="/conseils" component={PageConseils} />
         <Route exact path="/bookmakers" component={PageBookmakers} />
-        <Route path="/sporty_trader/:id" component={SportyTraderAnalyse} />
+        <Route path="/sporty_trader/pronostics/:id" component={SportyTraderAnalyse} />
       </ScrollToTop>
     </Switch>
   </BrowserRouter>

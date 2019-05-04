@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from 'axios';
+import { NavLink } from "react-router-dom";
 import ReactLoading from "react-loading";
 import { TabPane, Col, Row, Card, CardBody, CardText, CardTitle, Button } from "reactstrap";
 import PubMobile from "../../PubMobile";
@@ -53,7 +54,10 @@ class SportyTraderTab extends Component {
                                         <CardText><b>Date: </b>{pronostic.date} {pronostic.time}</CardText>
                                         <CardText><b>Compétition:</b> {pronostic.competition}</CardText>
                                         <CardText><b>Pronostic:</b> {pronostic.selection}</CardText>
-                                        <Button color="red"><b>Voir l'analyse</b></Button>
+                                        <NavLink id={pronostic.link} to={`/sporty_trader${pronostic.link}`}>
+                                            <Button color="red"><b>Voir l'analyse</b></Button>
+                                        </NavLink>
+
                                         <PubMobile />
                                     </CardBody></Col>
                                 </Row>
