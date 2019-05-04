@@ -13,7 +13,7 @@ class PronosticsInfoTab extends Component {
         };
     }
 
-    componentDidMount() {
+    componentWillUpdate() {
 
         axios.get(API + "pronostics_info")
             .then((response) => {
