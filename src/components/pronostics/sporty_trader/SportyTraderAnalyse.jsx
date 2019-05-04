@@ -15,7 +15,7 @@ class SportyTraderAnalyse extends Component {
 
     componentDidMount() {
         const { id } = this.props.match.params;
-        axios.get(API + "sporty_trade/single/"+id)
+        axios.get(API + "sporty_trader/single/"+id)
         .then((response) => {
             this.setState({
                 pronostic: response.data.pronostics,
