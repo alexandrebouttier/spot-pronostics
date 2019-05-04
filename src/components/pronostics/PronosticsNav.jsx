@@ -3,7 +3,6 @@ import classnames from 'classnames';
 import { Nav, NavLink, NavItem, TabContent } from "reactstrap";
 import RmcTab from "./rmc/RmcTab";
 import PronosticsInfoTab from "./pronostics_info/PronosticsInfoTab";
-import MediaPronosTab from "./media_pronos/MediasPronosTab";
 import RueDesJoueursTab from "./rue_des_joueurs/RueDesJoueursTab";
 import SportyTraderTab from "./sporty_trader/SportyTraderTab";
 
@@ -41,26 +40,19 @@ class PronosticsNav extends Component {
                             <b>Pronostics Info</b>
                         </NavLink>
                     </NavItem>
+           
                     <NavItem>
                         <NavLink
                             className={classnames({ active: this.state.activeTab === '3' })}
                             onClick={() => { this.toggle('3'); }}
-                        >
-                            <b>MediaPronos</b>
-                        </NavLink>
-                    </NavItem>
-                    <NavItem>
-                        <NavLink
-                            className={classnames({ active: this.state.activeTab === '4' })}
-                            onClick={() => { this.toggle('4'); }}
                         >
                             <b>Rue des joueurs</b>
                         </NavLink>
                     </NavItem>
                     <NavItem>
                         <NavLink
-                            className={classnames({ active: this.state.activeTab === '5' })}
-                            onClick={() => { this.toggle('5'); }}
+                            className={classnames({ active: this.state.activeTab === '4' })}
+                            onClick={() => { this.toggle('4'); }}
                         >
                             <b>Sporty-trader</b>
                         </NavLink>
@@ -69,7 +61,6 @@ class PronosticsNav extends Component {
                 <TabContent activeTab={this.state.activeTab} className="mt-5">
                     <RmcTab />
                     <PronosticsInfoTab />
-                    <MediaPronosTab />
                     <RueDesJoueursTab />
                     <SportyTraderTab />
                 </TabContent>

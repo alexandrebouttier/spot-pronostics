@@ -31,7 +31,7 @@ class SportyTraderTab extends Component {
 
     render() {
         return (
-            <TabPane tabId="5">
+            <TabPane tabId="4">
                 <Row>
 
                     {this.state.loading ? (

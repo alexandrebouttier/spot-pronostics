@@ -30,7 +30,7 @@ class RueDesJoueursTab extends Component {
 
     render() {
         return (
-            <TabPane tabId="4">
+            <TabPane tabId="3">
                 <Row>
 
                     {this.state.loading ? (
