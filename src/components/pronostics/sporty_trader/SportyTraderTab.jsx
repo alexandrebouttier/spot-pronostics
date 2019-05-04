@@ -14,7 +14,7 @@ class SportyTraderTab extends Component {
         };
     }
 
-    componentWillUpdate() {
+    componentDidMount() {
 
         axios.get(API + "sporty_trader")
             .then((response) => {

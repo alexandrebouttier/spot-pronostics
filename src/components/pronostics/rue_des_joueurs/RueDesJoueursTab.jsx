@@ -13,7 +13,7 @@ class RueDesJoueursTab extends Component {
         };
     }
 
-    componentWillUpdate() {
+    componentDidMount() {
 
         axios.get(API + "rue_des_joueurs")
             .then((response) => {
