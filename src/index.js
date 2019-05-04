@@ -11,6 +11,7 @@ import PageNews from "./pages/PageNews";
 import PageConseils from "./pages/PageConseils";
 import PageBookmakers from "./pages/PageBookmakers";
 import ScrollToTop from "react-router-scroll-top";
+import SportyTraderAnalyse from "./components/pronostics/sporty_trader/SportyTraderAnalyse";
 
 
 const Root = () => (
@@ -21,6 +22,7 @@ const Root = () => (
         <Route exact path="/news" component={PageNews} />
         <Route exact path="/conseils" component={PageConseils} />
         <Route exact path="/bookmakers" component={PageBookmakers} />
+        <Route path="/sporty_trader/:id" component={SportyTraderAnalyse} />
       </ScrollToTop>
     </Switch>
   </BrowserRouter>
