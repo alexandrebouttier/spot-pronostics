@@ -45,24 +45,27 @@ class SportyTraderAnalyse extends Component {
                                 <Card className="mb-4 shadow">
                                     <CardBody>
                                         <a href="javascript:history.back()">
-                                            <Button color="primary">RETOUR</Button>
+                                            <Button className="mb-3" color="red">RETOUR</Button>
                                         </a>
-
-                                        <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}  le {pronostic.date}</b><br></br>
-                                            {pronostic.league}
+                                        <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}  le {pronostic.date}</b>
+                
                                         </CardTitle>
-                                        <CardText>
+                                        <span>{pronostic.league}</span>
+                                        <CardText className="mt-4">
                                             <b>PRONOSTIC:</b><br></br><br></br>
                                             {pronostic.selection}<br></br><br></br>
                                         </CardText>
-                                        <CardText>
+
+                                        {pronostic.pronostic ? (<CardText>
                                             <b>ANALYSE:</b><br></br><br></br>
                                             {pronostic.pronostic}
-                                        </CardText>
+                                        </CardText>) : ""}
+
                                         <CardText>
                                             <b>CONCLUSION:</b><br></br><br></br>
                                             {pronostic.conclusion}
                                         </CardText>
+                                        <PubMobile/>
                                     </CardBody>
                                 </Card>
                             </Col>
