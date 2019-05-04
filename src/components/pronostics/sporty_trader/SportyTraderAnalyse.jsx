@@ -15,7 +15,17 @@ class SportyTraderAnalyse extends Component {
 
     componentDidMount() {
         const { id } = this.props.match.params;
-        console.log(id);
+        axios.get(API + "sporty_trade/single/"+id)
+        .then((response) => {
+            this.setState({
+                pronostic: response.data.pronostics,
+                loading: false
+            });
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
     }
     render() {
         return (
