@@ -48,7 +48,7 @@ class SportyTraderAnalyse extends Component {
                                             <Button className="mb-3" color="red">RETOUR</Button>
                                         </a>
                                         <CardTitle><b>{pronostic.equipe1} VS {pronostic.equipe2}  le {pronostic.date}</b>
-                
+
                                         </CardTitle>
                                         <span>{pronostic.league}</span>
                                         <CardText className="mt-4">
@@ -60,12 +60,12 @@ class SportyTraderAnalyse extends Component {
                                             <b>ANALYSE:</b><br></br><br></br>
                                             {pronostic.pronostic}
                                         </CardText>) : ""}
-
-                                        <CardText>
+                                        {pronostic.conclusion ? (<CardText>
                                             <b>CONCLUSION:</b><br></br><br></br>
                                             {pronostic.conclusion}
-                                        </CardText>
-                                        <PubMobile/>
+                                        </CardText>) : ""}
+
+                                        <PubMobile />
                                     </CardBody>
                                 </Card>
                             </Col>

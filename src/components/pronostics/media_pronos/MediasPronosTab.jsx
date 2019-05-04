@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import ReactLoading from "react-loading";
-import { TabPane, Col, Row, Card, CardBody, CardText, CardTitle } from "reactstrap";
+import { TabPane, Col, Row, Card,Button, CardBody, CardText, CardTitle } from "reactstrap";
 import PubMobile from "../../PubMobile";
 import API from "../../../config";
+import { NavLink } from "react-router-dom";
 class MediaPronosTab extends Component {
     constructor(props) {
         super(props);
@@ -43,7 +44,11 @@ class MediaPronosTab extends Component {
                                 <CardBody>
                                     <CardTitle><b>{pronostic.title}</b></CardTitle>
                                     <CardText><b>Analyse:</b><br></br><br></br>{pronostic.pronostic}</CardText>
+                                    <NavLink id={pronostic.link} to={`/mediapronos${pronostic.link}`}>
+                                            <Button color="red"><b>Lire la suite</b></Button>
+                                        </NavLink>
                                     <PubMobile />
+
                                 </CardBody>
                             </Card>
 
